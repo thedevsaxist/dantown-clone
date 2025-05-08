@@ -12,44 +12,80 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final double padding = 15;
+
   @override
   Widget build(BuildContext context) {
     final vm = context.read<ISignUpScreenViewModel>();
-    return Column(
+    return ListView(
       children: [
+        // username
+        TextInput(
+          textController: vm.userNameController,
+          focusNode: vm.userNameFocusNode,
+          label: "Username",
+          hintText: "Enter your username",
+          keyboardType: TextInputType.name,
+          nextFocusNode: vm.firstNameFocusNode,
+          padding: padding, // Pass the padding variable
+        ),
+
+        // first name
+        TextInput(
+          textController: vm.firstNameController,
+          focusNode: vm.firstNameFocusNode,
+          label: "First name",
+          hintText: "Enter your first name",
+          keyboardType: TextInputType.name,
+          nextFocusNode: vm.emailFocusNode,
+          padding: padding, // Pass the padding variable
+        ),
+
+        // email
         TextInput(
           textController: vm.emailController,
           focusNode: vm.emailFocusNode,
           label: "Email",
           hintText: "Enter your email address",
           keyboardType: TextInputType.emailAddress,
-          nextFocusNode: vm.passwordFocusNode,
+          nextFocusNode: vm.phoneNumberFocusNode,
+          padding: padding, // Pass the padding variable
         ),
 
-        const SizedBox(height: 30),
-
+        // phone number
         TextInput(
-          textController: vm.emailController,
-          focusNode: vm.emailFocusNode,
+          textController: vm.phoneNumberController,
+          focusNode: vm.phoneNumberFocusNode,
+          label: "Phone number",
+          hintText: "Enter your phone number",
+          keyboardType: TextInputType.number,
+          nextFocusNode: vm.passwordFocusNode,
+          padding: padding, // Pass the padding variable
+        ),
+
+        // password
+        TextInput(
+          textController: vm.passwordController,
+          focusNode: vm.passwordFocusNode,
           label: "Password",
           hintText: "Enter your password",
           keyboardType: TextInputType.visiblePassword,
           nextFocusNode: vm.passwordFocusNode,
+          padding: padding, // Pass the padding variable
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Forgot password",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w300),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 15),
 
+        // referral code
+        TextInput(
+          textController: vm.referralCodeController,
+          focusNode: vm.referralCodeFocusNode,
+          label: "Referral Code(Optional)",
+          hintText: "Enter your referral code(Optional)",
+          keyboardType: TextInputType.name,
+          nextFocusNode: vm.referralCodeFocusNode,
+          padding: padding, // Pass the padding variable
+        ),
+
+        // const SizedBox(height: 15),
         AdvanceButton(label: "Sign up", onPressed: () => vm.signUp(context)),
       ],
     );

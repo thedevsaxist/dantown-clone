@@ -12,12 +12,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final double padding = 20;
   @override
   Widget build(BuildContext context) {
     final vm = context.read<ILoginScreenViewModel>();
     return Column(
       children: [
         TextInput(
+          padding: 20,
           textController: vm.emailController,
           focusNode: vm.emailFocusNode,
           label: "Email",
@@ -26,11 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
           nextFocusNode: vm.passwordFocusNode,
         ),
 
-        const SizedBox(height: 30),
-
         TextInput(
-          textController: vm.emailController,
-          focusNode: vm.emailFocusNode,
+          padding: 20,
+          textController: vm.passwordController,
+          focusNode: vm.passwordFocusNode,
           label: "Password",
           hintText: "Enter your password",
           keyboardType: TextInputType.visiblePassword,

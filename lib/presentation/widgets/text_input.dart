@@ -10,6 +10,7 @@ class TextInput extends StatefulWidget {
   final String hintText;
   final TextInputType keyboardType;
   final String? Function(String?)? validator;
+  final double padding;
 
   const TextInput({
     super.key,
@@ -20,6 +21,7 @@ class TextInput extends StatefulWidget {
     required this.keyboardType,
     this.validator,
     required this.nextFocusNode,
+    required this.padding,
   });
 
   @override
@@ -34,14 +36,16 @@ class _TextInputState extends State<TextInput> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.label,
-          style: Theme.of(
-            context,
-          ).textTheme.bodyMedium?.copyWith(color: AppColors.darkGrey, fontWeight: FontWeight.bold),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: widget.padding),
+          child: Text(
+            widget.label,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: AppColors.darkGrey,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-
-        const SizedBox(height: 20),
 
         TextFormField(
           controller: widget.textController,
