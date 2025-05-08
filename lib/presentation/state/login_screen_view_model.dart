@@ -1,4 +1,8 @@
+import 'package:d_crypto_lite/core/routes.dart';
+import 'package:d_crypto_lite/domain/entities/login_entity.dart';
+import 'package:d_crypto_lite/domain/usecases/login_usecase.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 abstract class ILoginScreenViewModel extends ChangeNotifier {
   TextEditingController get emailController;
@@ -11,6 +15,10 @@ abstract class ILoginScreenViewModel extends ChangeNotifier {
 }
 
 class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewModel {
+  final LoginUsecase _loginUsecase;
+
+  LoginScreenViewModel(this._loginUsecase);
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -40,6 +48,12 @@ class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewMod
 
   @override
   Future<void> login(BuildContext context) async {
-    print("Button Tapped");
+    final isLoggedIn = _loginUsecase.login(
+      LoginEntity(email: _emailController.text.trim(), password: _passwordController.text.trim()),
+    );
+
+    if (isLoggedIn) {
+      context.go(Routes.dashboard);
+    }
   }
 }
