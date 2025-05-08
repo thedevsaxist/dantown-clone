@@ -1,6 +1,8 @@
 import 'package:d_crypto_lite/core/routes.dart';
+import 'package:d_crypto_lite/core/theme.dart';
 import 'package:d_crypto_lite/domain/entities/login_entity.dart';
 import 'package:d_crypto_lite/domain/usecases/login_usecase.dart';
+import 'package:default_ui_components/default_ui_components.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,7 +13,7 @@ abstract class ILoginScreenViewModel extends ChangeNotifier {
   FocusNode get emailFocusNode;
   FocusNode get passwordFocusNode;
 
-  Future<void> login(BuildContext context);
+  void login(BuildContext context);
 }
 
 class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewModel {
@@ -47,13 +49,19 @@ class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewMod
   }
 
   @override
-  Future<void> login(BuildContext context) async {
+  void login(BuildContext context) {
+    showCircularProgressIndicator(context: context, valueColor: AppColors.primaryColor);
+
     final isLoggedIn = _loginUsecase.login(
       LoginEntity(email: _emailController.text.trim(), password: _passwordController.text.trim()),
     );
 
     if (isLoggedIn) {
+      Navigator.pop(context); // remove the circular progress indicator
       context.go(Routes.dashboard);
+    } else {
+      Navigator.pop(context); // remove the circular progress indicator
+      ErrorSnackBar(errorMessage: "Invalid Credentials");
     }
   }
 }
