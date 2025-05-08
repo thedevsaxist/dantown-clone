@@ -1,0 +1,37 @@
+{
+  "wallet": {
+    "balance": 125.43,
+    "currency": "USDT"
+  },
+  "transactions": [
+    {
+      "id": "txn001",
+      "type": "buy",
+      "asset": "BTC",
+      "amount": 0.0032,
+      "price": 89.22,
+      "date": "2025-04-29T10:30:00Z"
+    },
+    {
+      "id": "txn002",
+      "type": "sell",
+      "asset": "ETH",
+      "amount": 0.2100,
+      "price": 34.50,
+      "date": "2025-04-28T15:45:00Z"
+    },
+    {
+      "id": "txn003",
+      "type": "airtime",
+      "network": "MTN",
+      "amount": 500,
+      "phone": "08031234567",
+      "date": "2025-04-27T12:00:00Z"
+    }
+  ],
+  "user": {
+    "id": "user123",
+    "name": "John Doe",
+    "email": "john@example.com"
+  }
+}

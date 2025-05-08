@@ -1,0 +1,88 @@
+import 'package:d_crypto_lite/core/constants.dart';
+import 'package:d_crypto_lite/core/theme.dart';
+import 'package:flutter/material.dart';
+
+class TextInput extends StatefulWidget {
+  final TextEditingController textController;
+  final FocusNode focusNode;
+  final FocusNode nextFocusNode;
+  final String label;
+  final String hintText;
+  final TextInputType keyboardType;
+  final String? Function(String?)? validator;
+
+  const TextInput({
+    super.key,
+    required this.textController,
+    required this.focusNode,
+    required this.label,
+    required this.hintText,
+    required this.keyboardType,
+    this.validator,
+    required this.nextFocusNode,
+  });
+
+  @override
+  State<TextInput> createState() => _TextInputState();
+}
+
+class _TextInputState extends State<TextInput> {
+  bool obscureText = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.label,
+          style: Theme.of(
+            context,
+          ).textTheme.bodyMedium?.copyWith(color: AppColors.darkGrey, fontWeight: FontWeight.bold),
+        ),
+
+        const SizedBox(height: 20),
+
+        TextFormField(
+          controller: widget.textController,
+          keyboardType: widget.keyboardType,
+          obscureText: obscureText,
+          validator: widget.validator,
+          onFieldSubmitted: (value) {
+            FocusScope.of(context).requestFocus(widget.nextFocusNode);
+          },
+          decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            hintText: widget.hintText,
+            hintStyle: Theme.of(
+              context,
+            ).textTheme.labelLarge?.copyWith(color: AppColors.secondaryColor),
+            suffixIcon:
+                widget.keyboardType == TextInputType.visiblePassword
+                    ? IconButton(
+                      onPressed: () {
+                        setState(() {
+                          obscureText = !obscureText;
+                        });
+                      },
+                      icon: Icon(
+                        obscureText ? Icons.visibility_off : Icons.visibility,
+                        color: Color(0xFF9e9e9e),
+                      ),
+                    )
+                    : null,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(Constants.borderRadius),
+              borderSide: BorderSide.none,
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(Constants.borderRadius),
+              borderSide: BorderSide.none,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
