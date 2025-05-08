@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/core/theme.dart';
 import 'package:d_crypto_lite/presentation/screens/login_screen.dart';
+import 'package:d_crypto_lite/presentation/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthInterface extends StatefulWidget {
@@ -45,7 +46,7 @@ class _AuthInterfaceState extends State<AuthInterface> with SingleTickerProvider
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
-        child: TabBarView(controller: _tabController, children: [LoginScreen(), LoginScreen()]),
+        child: TabBarView(controller: _tabController, children: [LoginScreen(), SignUpScreen()]),
       ),
     );
   }
