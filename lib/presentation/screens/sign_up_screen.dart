@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/presentation/state/sign_up_screen_view_model.dart';
 import 'package:d_crypto_lite/presentation/widgets/advance_button.dart';
+import 'package:d_crypto_lite/presentation/widgets/dropdown_input.dart';
 import 'package:d_crypto_lite/presentation/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -85,7 +86,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
           padding: padding, // Pass the padding variable
         ),
 
-        // const SizedBox(height: 15),
+        DropdownInput(
+          label: "How did you hear about us?",
+          options: ["Facebook", "Twitter", "Instagram", "Billboard", "Other"],
+          selectedValue: null,
+          padding: padding, // Pass the padding variable
+          onChanged: (value) {
+            // Handle the selected value
+            print("Selected referral source: $value");
+          },
+        ),
+
+        const SizedBox(height: 20),
+
         AdvanceButton(label: "Sign up", onPressed: () => vm.signUp(context)),
       ],
     );
