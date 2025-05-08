@@ -10,10 +10,11 @@ class AuthServices implements IAuthServices {
   bool login(LoginModel userCredentials) {
     final email = dotenv.env["EMAIL"];
     final password = dotenv.env["PASSWORD"];
-    if (userCredentials.email != email && userCredentials.password != password) {
+
+    if (userCredentials.email == email && userCredentials.password == password) {
+      return true;
+    } else {
       return false;
     }
-
-    return true;
   }
 }

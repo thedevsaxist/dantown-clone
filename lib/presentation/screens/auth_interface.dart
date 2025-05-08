@@ -28,25 +28,28 @@ class _AuthInterfaceState extends State<AuthInterface> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
-    return Scaffold(
-      appBar: AppBar(
-        title: Image.asset('assets/dantown_logo.png'),
-        bottom: TabBar(
-          controller: _tabController,
-          isScrollable: true,
-          labelStyle: t.bodyLarge?.copyWith(
-            color: AppColors.primaryColor,
-            fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Image.asset('assets/dantown_logo.png'),
+          bottom: TabBar(
+            controller: _tabController,
+            isScrollable: true,
+            labelStyle: t.bodyLarge?.copyWith(
+              color: AppColors.primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
+            unselectedLabelColor: AppColors.secondaryColor,
+            indicatorColor: AppColors.primaryColor,
+            dividerColor: AppColors.backgroundColor,
+            tabs: [Tab(text: "Log In"), Tab(text: "Sign Up")],
           ),
-          unselectedLabelColor: AppColors.secondaryColor,
-          indicatorColor: AppColors.primaryColor,
-          dividerColor: AppColors.backgroundColor,
-          tabs: [Tab(text: "Log In"), Tab(text: "Sign Up")],
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
-        child: TabBarView(controller: _tabController, children: [LoginScreen(), SignUpScreen()]),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
+          child: TabBarView(controller: _tabController, children: [LoginScreen(), SignUpScreen()]),
+        ),
       ),
     );
   }
