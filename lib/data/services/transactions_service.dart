@@ -7,7 +7,7 @@ import 'package:d_crypto_lite/data/models/wallet_model.dart';
 
 abstract class ITransactionsService {
   Future<List<TransactionModel>> getTransactionHistory();
-  Future<void> getUserProfile();
+  Future<UserModel> getUserProfile();
   Future<WalletModel> getAccountBalance();
 }
 
@@ -36,10 +36,10 @@ class TransactionsService implements ITransactionsService {
   }
 
   @override
-  Future<void> getUserProfile() async {
+  Future<UserModel> getUserProfile() async {
     final data = await openFile();
     final response = UserModel.fromJson(jsonDecode(data)["user"]);
 
-    print(response.email);
+    return response;
   }
 }
