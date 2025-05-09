@@ -73,7 +73,7 @@ class _DashboardState extends State<Dashboard> {
           children: [
             Container(
               width: MediaQuery.sizeOf(context).width,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
               decoration: BoxDecoration(
                 color: AppColors.backgroundColor,
                 borderRadius: BorderRadius.circular(Constants.borderRadius),
@@ -90,7 +90,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
 
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 15),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

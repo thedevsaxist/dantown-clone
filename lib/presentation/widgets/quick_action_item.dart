@@ -16,20 +16,24 @@ class _QuickActionItemState extends State<QuickActionItem> {
     return Column(
       children: [
         Container(
-          height: 70,
-          width: 70,
-          padding: const EdgeInsets.all(10),
+          height: MediaQuery.sizeOf(context).height * .08,
+          padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
             color: AppColors.lightBlue200,
             borderRadius: BorderRadius.circular(18),
           ),
           child: Image.asset(widget.image, fit: BoxFit.cover),
         ),
+
+        const SizedBox(height: 10),
+
         Text(
           widget.label,
-          style: Theme.of(
-            context,
-          ).textTheme.labelMedium?.copyWith(color: AppColors.primaryColor, letterSpacing: 0.15),
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+            color: AppColors.primaryColor,
+            letterSpacing: 0.15,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
     );
