@@ -4,6 +4,9 @@ import 'package:d_crypto_lite/data/services/auth_services.dart';
 import 'package:d_crypto_lite/data/services/transactions_service.dart';
 import 'package:d_crypto_lite/domain/repo/auth_service_repo.dart';
 import 'package:d_crypto_lite/domain/repo/transaction_service_repo.dart';
+import 'package:d_crypto_lite/domain/usecases/get_transaction_history_usecase.dart';
+import 'package:d_crypto_lite/domain/usecases/get_user_usecase.dart';
+import 'package:d_crypto_lite/domain/usecases/get_wallet_balance_usecase.dart';
 import 'package:d_crypto_lite/domain/usecases/login_usecase.dart';
 import 'package:d_crypto_lite/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/sign_up_screen_view_model.dart';
@@ -24,6 +27,13 @@ void serviceLocator() {
 
   // usecases
   sl.registerFactory<LoginUsecase>(() => LoginUsecase(sl<AuthServiceRepo>()));
+  sl.registerFactory<GetUserUsecase>(() => GetUserUsecase(sl<TransactionServiceRepo>()));
+  sl.registerFactory<GetTransactionHistoryUsecase>(
+    () => GetTransactionHistoryUsecase(sl<TransactionServiceRepo>()),
+  );
+  sl.registerFactory<GetWalletBalanceUsecase>(
+    () => GetWalletBalanceUsecase(sl<TransactionServiceRepo>()),
+  );
 
   // viewmodels
   sl.registerLazySingleton<ILoginScreenViewModel>(() => LoginScreenViewModel(sl<LoginUsecase>()));

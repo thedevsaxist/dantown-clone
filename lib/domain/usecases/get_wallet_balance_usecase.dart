@@ -1,0 +1,17 @@
+import 'package:d_crypto_lite/domain/entities/wallet_entity.dart';
+import 'package:d_crypto_lite/domain/repo/transaction_service_repo.dart';
+
+class GetWalletBalanceUsecase {
+  final TransactionServiceRepo _transactionServiceRepo;
+
+  const GetWalletBalanceUsecase(this._transactionServiceRepo);
+
+  Future<WalletEntity> call() async {
+    try {
+      final balance = await _transactionServiceRepo.getAccountBalance();
+      return balance;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+}
