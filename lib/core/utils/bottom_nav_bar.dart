@@ -17,12 +17,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: widget.child,
 
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 15,
         currentIndex: widget.child.currentIndex,
         onTap: (index) => widget.child.goBranch(index, initialLocation: true),
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.swap_horiz), label: "Buy and Sell"),
-          BottomNavigationBarItem(icon: Icon(Icons.call), label: "Airtime and Data"),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: "Airtime"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),

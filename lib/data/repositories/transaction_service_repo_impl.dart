@@ -36,6 +36,11 @@ class TransactionServiceRepoImpl implements TransactionServiceRepo {
   @override
   Future<UserEntity> getUserProfile() async {
     final response = await _transactionsService.getUserProfile();
-    return UserEntity(id: response.id, name: response.name, email: response.email);
+    return UserEntity(
+      id: response.id,
+      name: response.name,
+      email: response.email,
+      username: response.username,
+    );
   }
 }

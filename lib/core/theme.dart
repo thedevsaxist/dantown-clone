@@ -6,7 +6,11 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
     fontFamily: GoogleFonts.rubik().fontFamily,
     scaffoldBackgroundColor: AppColors.backgroundColor,
-    appBarTheme: AppBarTheme(backgroundColor: AppColors.backgroundColor),
+    iconTheme: IconThemeData(color: AppColors.primaryColor),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.backgroundColor,
+      actionsIconTheme: IconThemeData(color: AppColors.primaryColor),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: AppColors.primaryColor,
       unselectedItemColor: AppColors.secondaryColor,

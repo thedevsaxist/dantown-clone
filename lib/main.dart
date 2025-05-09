@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/app.dart';
 import 'package:d_crypto_lite/core/service_locators.dart';
+import 'package:d_crypto_lite/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/sign_up_screen_view_model.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,9 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => sl<ILoginScreenViewModel>()),
-        ChangeNotifierProvider(create: (context) => sl<ISignUpScreenViewModel>()),
+        ChangeNotifierProvider(create: (_) => sl<ILoginScreenViewModel>()),
+        ChangeNotifierProvider(create: (_) => sl<ISignUpScreenViewModel>()),
+        ChangeNotifierProvider(create: (_) => sl<IDashboardViewModel>()),
       ],
       child: const DCryptoLite(),
     ),

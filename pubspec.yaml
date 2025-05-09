@@ -32,4 +32,5 @@ flutter:
 
   assets:
     - assets/dantown_logo.png
+    - assets/headshot.png
     - .env

@@ -8,6 +8,7 @@ import 'package:d_crypto_lite/domain/usecases/get_transaction_history_usecase.da
 import 'package:d_crypto_lite/domain/usecases/get_user_usecase.dart';
 import 'package:d_crypto_lite/domain/usecases/get_wallet_balance_usecase.dart';
 import 'package:d_crypto_lite/domain/usecases/login_usecase.dart';
+import 'package:d_crypto_lite/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/sign_up_screen_view_model.dart';
 import 'package:get_it/get_it.dart';
@@ -38,4 +39,11 @@ void serviceLocator() {
   // viewmodels
   sl.registerLazySingleton<ILoginScreenViewModel>(() => LoginScreenViewModel(sl<LoginUsecase>()));
   sl.registerLazySingleton<ISignUpScreenViewModel>(() => SignUpScreenViewModel());
+  sl.registerLazySingleton<IDashboardViewModel>(
+    () => DashboardViewModel(
+      sl<GetWalletBalanceUsecase>(),
+      sl<GetTransactionHistoryUsecase>(),
+      sl<GetUserUsecase>(),
+    ),
+  );
 }
