@@ -61,7 +61,6 @@ class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewMod
       context.go(Routes.dashboard);
     } else {
       Navigator.pop(context); // remove the circular progress indicator
-      ErrorSnackBar(errorMessage: "Invalid Credentials");
     }
   }
 }

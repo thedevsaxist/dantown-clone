@@ -7,6 +7,13 @@ class AppTheme {
     fontFamily: GoogleFonts.rubik().fontFamily,
     scaffoldBackgroundColor: AppColors.backgroundColor,
     appBarTheme: AppBarTheme(backgroundColor: AppColors.backgroundColor),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: AppColors.primaryColor,
+      unselectedItemColor: AppColors.secondaryColor,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+    ),
   );
 }
 
