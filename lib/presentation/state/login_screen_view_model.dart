@@ -1,10 +1,8 @@
-import 'package:d_crypto_lite/core/routes.dart';
 import 'package:d_crypto_lite/core/theme.dart';
 import 'package:d_crypto_lite/domain/entities/login_entity.dart';
 import 'package:d_crypto_lite/domain/usecases/login_usecase.dart';
 import 'package:default_ui_components/default_ui_components.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 abstract class ILoginScreenViewModel extends ChangeNotifier {
   TextEditingController get emailController;
@@ -58,7 +56,6 @@ class LoginScreenViewModel extends ChangeNotifier implements ILoginScreenViewMod
 
     if (isLoggedIn) {
       Navigator.pop(context); // remove the circular progress indicator
-      context.go(Routes.dashboard);
     } else {
       Navigator.pop(context); // remove the circular progress indicator
     }

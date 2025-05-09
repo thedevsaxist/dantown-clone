@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/app.dart';
 import 'package:d_crypto_lite/core/service_locators.dart';
+import 'package:d_crypto_lite/data/services/auth_services.dart';
 import 'package:d_crypto_lite/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/presentation/state/sign_up_screen_view_model.dart';
@@ -19,6 +20,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => sl<ILoginScreenViewModel>()),
         ChangeNotifierProvider(create: (_) => sl<ISignUpScreenViewModel>()),
         ChangeNotifierProvider(create: (_) => sl<IDashboardViewModel>()),
+        ChangeNotifierProvider(create: (_) => sl<IAuthServices>()),
       ],
       child: const DCryptoLite(),
     ),
