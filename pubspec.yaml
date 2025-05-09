@@ -31,6 +31,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/dantown_logo.png
-    - assets/headshot.png
+    - assets/
     - .env
