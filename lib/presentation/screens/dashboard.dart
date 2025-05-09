@@ -30,6 +30,8 @@ class _DashboardState extends State<Dashboard> {
     // final vm = context.read<IDashboardViewModel>();
     final username = context.watch<IDashboardViewModel>().username;
     final t = Theme.of(context).textTheme;
+    final screenWidth = MediaQuery.sizeOf(context).width;
+
     return Scaffold(
       backgroundColor: AppColors.secondaryBackgroundColor,
       appBar: AppBar(
@@ -67,48 +69,104 @@ class _DashboardState extends State<Dashboard> {
         bottom: PreferredSize(preferredSize: Size.fromHeight(120), child: WalletDisplay()),
       ),
 
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: Column(
-          children: [
-            Container(
-              width: MediaQuery.sizeOf(context).width,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-              decoration: BoxDecoration(
-                color: AppColors.backgroundColor,
-                borderRadius: BorderRadius.circular(Constants.borderRadius),
-                boxShadow: [BoxShadow(blurStyle: BlurStyle.outer, blurRadius: 8, spreadRadius: 1)],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Quick actions",
-                    style: t.bodyLarge?.copyWith(
-                      color: AppColors.primaryColor,
-                      fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Column(
+            children: [
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundColor,
+                  borderRadius: BorderRadius.circular(Constants.borderRadius),
+                  boxShadow: [
+                    BoxShadow(
+                      blurStyle: BlurStyle.outer,
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                      color: Color.fromARGB(255, 215, 218, 226),
                     ),
-                  ),
-
-                  const SizedBox(height: 15),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      QuickActionItem(image: "assets/yyy.png", label: "Trade"),
-                      QuickActionItem(
-                        image:
-                            "assets/Screenshot_2025-05-09-21-33-51-545_com.dantown.Dantownapp.png",
-                        label: "Virtual Card",
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Quick actions",
+                      style: t.bodyLarge?.copyWith(
+                        color: AppColors.primaryColor,
+                        fontWeight: FontWeight.bold,
                       ),
-                      QuickActionItem(image: "assets/ooo.png", label: "Recharge"),
-                      QuickActionItem(image: "assets/hh.png", label: "More"),
-                    ],
-                  ),
-                ],
+                    ),
+
+                    const SizedBox(height: 15),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        QuickActionItem(image: "assets/yyy.png", label: "Trade"),
+                        QuickActionItem(
+                          image:
+                              "assets/Screenshot_2025-05-09-21-33-51-545_com.dantown.Dantownapp.png",
+                          label: "Virtual Card",
+                        ),
+                        QuickActionItem(image: "assets/ooo.png", label: "Recharge"),
+                        QuickActionItem(image: "assets/hh.png", label: "More"),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+
+              // ad
+              Padding(
+                padding: const EdgeInsets.all(Constants.borderRadius),
+                child: Container(
+                  width: screenWidth,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundColor,
+                  borderRadius: BorderRadius.circular(Constants.borderRadius),
+                  boxShadow: [
+                    BoxShadow(
+                      blurStyle: BlurStyle.outer,
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                      color: Color.fromARGB(255, 215, 218, 226),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Coin/Price",
+                          style: t.labelSmall?.copyWith(color: AppColors.darkGrey),
+                        ),
+                        Text(
+                          "24h Change",
+                          style: t.labelSmall?.copyWith(color: AppColors.darkGrey),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

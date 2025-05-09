@@ -26,7 +26,7 @@ class AppColors {
   static final secondaryColor = Color(0xFF99a0b0);
   static final backgroundColor = Color(0xFFfafafa);
   static final secondaryBackgroundColor = Color(0xFFf5f9ff);
-  static final darkGrey = Color(0xFF3d3d3d);
+  static final darkGrey = Color(0xFF798499);
   static final lightBlue = Color(0xFFf5f7ff);
   static final lightBlue200 = Color(0xFFf2f5fc);
 }
