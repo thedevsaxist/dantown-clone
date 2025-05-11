@@ -24,6 +24,8 @@ class DashboardViewModel extends ChangeNotifier implements IDashboardViewModel {
   @override
   String? get username => _username;
 
+  final List<String> items = List.generate(5, (index) => "");
+
   @override
   Future<void> getAccountBalance() async {
     await _balanceUsecase.call();

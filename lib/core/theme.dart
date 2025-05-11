@@ -17,6 +17,7 @@ class AppTheme {
       showSelectedLabels: true,
       showUnselectedLabels: true,
       type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColors.backgroundColor,
     ),
   );
 }
@@ -29,4 +30,6 @@ class AppColors {
   static final darkGrey = Color(0xFF798499);
   static final lightBlue = Color(0xFFf5f7ff);
   static final lightBlue200 = Color(0xFFf2f5fc);
+  static final green = Color(0xFF54b890);
+  static final textGreen = Color(0xFF54ab58);
 }
