@@ -8,10 +8,10 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
+  cupertino_icons: ^1.0.8
   default_ui_components:
     git:
       url: https://github.com/thedevsaxist/default_ui_components
-  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.2.1
@@ -19,9 +19,9 @@ dependencies:
   go_router: ^15.1.1
   google_fonts: ^6.2.1
   provider: ^6.1.5
+  uicons: ^1.0.1
 
 dev_dependencies:
-
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter

@@ -28,8 +28,12 @@ class AppColors {
   static final backgroundColor = Color(0xFFfafafa);
   static final secondaryBackgroundColor = Color(0xFFf5f9ff);
   static final darkGrey = Color(0xFF798499);
+  static final lightGrey = Color(0xFFf0f0f0);
   static final lightBlue = Color(0xFFf5f7ff);
   static final lightBlue200 = Color(0xFFf2f5fc);
   static final green = Color(0xFF54b890);
   static final textGreen = Color(0xFF54ab58);
+  static final yellow = Color(0xFFffed51);
+  static final darkBlue = Color(0xFF14127a);
+  static final textYellow = Color(0xFF736d47);
 }
