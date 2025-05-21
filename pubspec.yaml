@@ -32,4 +32,5 @@ flutter:
 
   assets:
     - assets/
+    - assets/headshot.jpeg
     - .env

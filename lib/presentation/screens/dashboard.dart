@@ -3,6 +3,7 @@ import 'package:d_crypto_lite/core/theme.dart';
 import 'package:d_crypto_lite/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/presentation/widgets/coins_tile.dart';
 import 'package:d_crypto_lite/presentation/widgets/custom_bottom_sheet.dart';
+import 'package:d_crypto_lite/presentation/widgets/profile_avatar.dart';
 import 'package:d_crypto_lite/presentation/widgets/quick_action_item.dart';
 import 'package:d_crypto_lite/presentation/widgets/wallet_display.dart';
 import 'package:flutter/cupertino.dart';
@@ -37,17 +38,13 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: AppColors.secondaryBackgroundColor,
       appBar: AppBar(
-        // leadingWidth: 35,
         titleSpacing: 10,
         scrolledUnderElevation: 0,
         actionsPadding: const EdgeInsets.only(right: Constants.horizontalPadding),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(Constants.borderRadius)),
         ),
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: CircleAvatar(foregroundImage: AssetImage("assets/headshot.png")),
-        ),
+        leading: Padding(padding: const EdgeInsets.only(left: 20), child: ProfileAvatar()),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -110,7 +107,8 @@ class _DashboardState extends State<Dashboard> {
                           children: [
                             QuickActionItem(image: "assets/yyy.png", label: "Trade"),
                             QuickActionItem(
-                              image: "assets/Screenshot_2025-05-09-21-33-51-545_com.dantown.Dantownapp.png",
+                              image:
+                                  "assets/Screenshot_2025-05-09-21-33-51-545_com.dantown.Dantownapp.png",
                               label: "Virtual Card",
                             ),
                             QuickActionItem(image: "assets/ooo.png", label: "Recharge"),
