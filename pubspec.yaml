@@ -33,4 +33,5 @@ flutter:
   assets:
     - assets/
     - assets/headshot.jpeg
+    - assets/network providers/
     - .env
