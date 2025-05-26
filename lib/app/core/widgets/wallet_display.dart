@@ -3,7 +3,8 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
 class WalletDisplay extends StatefulWidget {
-  const WalletDisplay({super.key});
+  final Widget trailing;
+  const WalletDisplay({super.key, required this.trailing});
 
   @override
   State<WalletDisplay> createState() => _WalletDisplayState();
@@ -61,18 +62,7 @@ class _WalletDisplayState extends State<WalletDisplay> {
               ],
             ),
 
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
-                backgroundColor: AppColors.primaryColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              ),
-              child: Text(
-                "Deposit",
-                style: t.labelLarge?.copyWith(color: AppColors.backgroundColor),
-              ),
-            ),
+            widget.trailing,
           ],
         ),
       ),

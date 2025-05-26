@@ -65,7 +65,23 @@ class _DashboardState extends State<Dashboard> {
           ),
         ],
 
-        bottom: PreferredSize(preferredSize: Size.fromHeight(120), child: WalletDisplay()),
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(120),
+          child: WalletDisplay(
+            trailing: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+                backgroundColor: AppColors.primaryColor,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              child: Text(
+                "Deposit",
+                style: t.labelLarge?.copyWith(color: AppColors.backgroundColor),
+              ),
+            ),
+          ),
+        ),
       ),
 
       body: CustomScrollView(

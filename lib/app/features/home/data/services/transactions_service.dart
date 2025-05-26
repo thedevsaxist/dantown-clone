@@ -14,7 +14,7 @@ abstract class ITransactionsService {
 class TransactionsService implements ITransactionsService {
   Future<String> openFile() async {
     return await File(
-      "/Users/chidiebubeiroezindu/Developer/flutter_projects/it_application_projects/d_crypto_lite/lib/data/datasources/mock_data.json",
+      "/Users/chidiebubeiroezindu/Developer/flutter_projects/it_application_projects/d_crypto_lite/lib/app/features/home/data/datasources/mock_data.json",
     ).readAsString();
   }
 
