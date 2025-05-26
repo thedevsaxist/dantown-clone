@@ -1,5 +1,5 @@
 
-import 'package:d_crypto_lite/app.dart';
+import 'package:d_crypto_lite/d_crypto_lite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
