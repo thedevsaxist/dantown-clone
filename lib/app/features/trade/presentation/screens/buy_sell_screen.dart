@@ -27,7 +27,7 @@ class _BuySellScreenState extends State<BuySellScreen> {
           borderRadius: BorderRadiusGeometry.vertical(bottom: Radius.circular(20)),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(240),
+          preferredSize: Size.fromHeight(250),
           child: Column(
             children: [
               WalletDisplay(
@@ -71,7 +71,8 @@ class _BuySellScreenState extends State<BuySellScreen> {
                     _Balance(
                       label: "Trading",
                       icon: Assets.images.exchange.image(scale: 17),
-                      balance: "0",
+                      balance: "0.00",
+                      showBottom: true,
                     ),
 
                     SizedBox(width: 10),
@@ -79,7 +80,8 @@ class _BuySellScreenState extends State<BuySellScreen> {
                     _Balance(
                       label: "Virtual Card",
                       icon: Assets.images.virtualCard.image(scale: 6),
-                      balance: "0",
+                      balance: "0.00",
+                      showBottom: false,
                     ),
                   ],
                 ),
@@ -190,8 +192,14 @@ class _Balance extends StatelessWidget {
   final String label;
   final Widget icon;
   final String balance;
+  final bool? showBottom;
 
-  const _Balance({required this.label, required this.icon, required this.balance});
+  const _Balance({
+    required this.label,
+    required this.icon,
+    required this.balance,
+    required this.showBottom,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -220,7 +228,15 @@ class _Balance extends StatelessWidget {
                 Text(label, style: t.bodyMedium),
               ],
             ),
-            Text("NGN $balance"),
+            Text("NGN $balance", style: t.titleLarge),
+
+            Row(
+              children: [
+                Text("0.0%", style: t.labelSmall?.copyWith(color: AppColors.green, fontSize: 10)),
+                Icon(Icons.arrow_drop_up_rounded, color: AppColors.green),
+                Text("Growth this month.", style: t.labelSmall?.copyWith(fontSize: 10)),
+              ],
+            ),
           ],
         ),
       ),
