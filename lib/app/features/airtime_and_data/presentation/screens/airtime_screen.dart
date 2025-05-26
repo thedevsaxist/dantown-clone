@@ -1,13 +1,17 @@
+import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/features/airtime_and_data/data/models/network_provider.dart';
 import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
 import 'package:flutter/material.dart';
 
 final List<NetworkProvider> _networkProviders = [
-  NetworkProvider(name: "Airtel Airtime VTU", imagePath: "assets/network providers/airtel.jpeg"),
-  NetworkProvider(name: "MTN Airtime VTU", imagePath: "assets/network providers/mtn.png"),
-  NetworkProvider(name: "GLO Airtime VTU", imagePath: "assets/network providers/glo.png"),
-  NetworkProvider(name: "9mobile Airtime VTU", imagePath: "assets/network providers/9mobile.jpeg"),
+  NetworkProvider(name: "Airtel Airtime VTU", imagePath: Assets.logos.networkProviders.airtel.path),
+  NetworkProvider(name: "MTN Airtime VTU", imagePath: Assets.logos.networkProviders.mtn.path),
+  NetworkProvider(name: "GLO Airtime VTU", imagePath: Assets.logos.networkProviders.glo.path),
+  NetworkProvider(
+    name: "9mobile Airtime VTU",
+    imagePath: Assets.logos.networkProviders.a9mobile.path,
+  ),
 ];
 
 class AirtimeScreen extends StatefulWidget {

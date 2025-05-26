@@ -1,3 +1,4 @@
+import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class ProfileAvatar extends StatelessWidget {
@@ -11,12 +12,11 @@ class ProfileAvatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: AssetImage("assets/headshot.jpeg"),
+          image: Assets.images.headshot.provider(),
           alignment: Alignment(0, -1),
           fit: BoxFit.fitWidth,
         ),
       ),
-      // child: Image.asset("assets/headshot.jpeg", fit: BoxFit.scaleDown),
     );
   }
 }

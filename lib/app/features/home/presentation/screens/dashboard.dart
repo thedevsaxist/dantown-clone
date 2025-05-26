@@ -1,4 +1,5 @@
 import 'package:d_crypto_lite/app/core/constants.dart';
+import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/features/home/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/app/core/widgets/coins_tile.dart';
@@ -121,14 +122,13 @@ class _DashboardState extends State<Dashboard> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            QuickActionItem(image: "assets/yyy.png", label: "Trade"),
+                            QuickActionItem(image: Assets.images.trade.path, label: "Trade"),
                             QuickActionItem(
-                              image:
-                                  "assets/Screenshot_2025-05-09-21-33-51-545_com.dantown.Dantownapp.png",
+                              image: Assets.images.virtualCard.path,
                               label: "Virtual Card",
                             ),
-                            QuickActionItem(image: "assets/ooo.png", label: "Recharge"),
-                            QuickActionItem(image: "assets/hh.png", label: "More"),
+                            QuickActionItem(image: Assets.images.recharge.path, label: "Recharge"),
+                            QuickActionItem(image: Assets.images.more.path, label: "More"),
                           ],
                         ),
                       ],

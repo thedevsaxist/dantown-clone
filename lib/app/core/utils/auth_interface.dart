@@ -1,3 +1,4 @@
+import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/screens/login_screen.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/screens/sign_up_screen.dart';
@@ -32,7 +33,7 @@ class _AuthInterfaceState extends State<AuthInterface> with SingleTickerProvider
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         appBar: AppBar(
-          title: Image.asset('assets/dantown_logo.png'),
+          title: Assets.logos.dantownLogo.image(),
           bottom: TabBar(
             controller: _tabController,
             isScrollable: true,
