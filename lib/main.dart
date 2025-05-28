@@ -4,6 +4,7 @@ import 'package:d_crypto_lite/app/features/auth/data/services/auth_services.dart
 import 'package:d_crypto_lite/app/features/home/presentation/state/dashboard_view_model.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/state/sign_up_screen_view_model.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => sl<IDashboardViewModel>()),
         ChangeNotifierProvider(create: (_) => sl<IAuthServices>()),
       ],
-      child: const DCryptoLite(),
+      child: DevicePreview(builder: (_) => const DCryptoLite()),
     ),
   );
 }
