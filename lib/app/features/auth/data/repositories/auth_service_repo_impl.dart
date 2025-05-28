@@ -1,7 +1,7 @@
-import 'package:d_crypto_lite/app/features/auth/data/models/login_model.dart';
-import 'package:d_crypto_lite/app/features/auth/data/services/auth_services.dart';
-import 'package:d_crypto_lite/app/features/auth/domain/entities/login_entity.dart';
-import 'package:d_crypto_lite/app/features/auth/domain/repo/auth_service_repo.dart';
+import 'package:dantown_clone/app/features/auth/data/models/login_model.dart';
+import 'package:dantown_clone/app/features/auth/data/services/auth_services.dart';
+import 'package:dantown_clone/app/features/auth/domain/entities/login_entity.dart';
+import 'package:dantown_clone/app/features/auth/domain/repo/auth_service_repo.dart';
 
 class AuthServiceRepoImpl implements AuthServiceRepo {
   final IAuthServices _authServices;

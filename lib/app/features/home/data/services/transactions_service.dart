@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:d_crypto_lite/app/features/home/data/models/transaction_model.dart';
-import 'package:d_crypto_lite/app/features/home/data/models/user_model.dart';
-import 'package:d_crypto_lite/app/features/home/data/models/wallet_model.dart';
+import 'package:dantown_clone/app/features/home/data/models/transaction_model.dart';
+import 'package:dantown_clone/app/features/home/data/models/user_model.dart';
+import 'package:dantown_clone/app/features/home/data/models/wallet_model.dart';
 
 abstract class ITransactionsService {
   Future<List<TransactionModel>> getTransactionHistory();
@@ -14,7 +14,7 @@ abstract class ITransactionsService {
 class TransactionsService implements ITransactionsService {
   Future<String> openFile() async {
     return await File(
-      "/Users/chidiebubeiroezindu/Developer/flutter_projects/it_application_projects/d_crypto_lite/lib/app/features/home/data/datasources/mock_data.json",
+      "/Users/chidiebubeiroezindu/Developer/flutter_projects/it_application_projects/dantown_clone/lib/app/features/home/data/datasources/mock_data.json",
     ).readAsString();
   }
 

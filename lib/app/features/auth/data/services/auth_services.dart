@@ -1,4 +1,4 @@
-import 'package:d_crypto_lite/app/features/auth/data/models/login_model.dart';
+import 'package:dantown_clone/app/features/auth/data/models/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 

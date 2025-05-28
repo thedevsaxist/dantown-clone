@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: widget.child,
 
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 15,
+        elevation: 15.sp,
         currentIndex: widget.child.currentIndex,
         onTap: (index) => widget.child.goBranch(index, initialLocation: true),
         items: [

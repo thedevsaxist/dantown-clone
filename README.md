@@ -31,8 +31,8 @@ A modern Flutter clone of the popular Dantown app, built to showcase my skills i
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/d_crypto_lite.git
-    cd d_crypto_lite
+    git clone git@github.com:thedevsaxist/dantown-clone.git
+    cd dantown-clone
     ```
 
 2. **Install dependencies:**
@@ -41,7 +41,16 @@ A modern Flutter clone of the popular Dantown app, built to showcase my skills i
     flutter pub get
     ```
 
-3. **Run the app:**
+3. **Set up environment variables:**
+
+    Create a `.env` file in the project root and add your own email and password:
+    ```env
+    EMAIL="your_email@example.com"
+    PASSWORD="your_secure_password"
+    ```
+
+
+4. **Run the app:**
     ```bash
     flutter run
     ```
@@ -75,7 +84,7 @@ lib/
 │       │       ├── state/                # State management (providers, notifiers)
 │       │       └── screens/              # Feature screens (e.g., buy_sell_screen.dart)
 │       └── ...other features             # (e.g., auth, home, profile, airtime_and_data)
-├── d_crypto_lite.dart                    # Main app widget
+├── dantown_clone.dart                    # Main app widget
 ├── main.dart                             # App entry point
 ```
 
@@ -131,17 +140,15 @@ flutter build ios
 
 ## 📸 Screenshots
 
-![Login Screenshot](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.10.36.png>)
+![Login Screenshot](assets/screenshots/login.png)
 
-![Signup Screenshot](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.10.53.png>)
+![Signup Screenshot](assets/screenshots/signup.png)
 
-![Dashboard](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.11.24.png>)
+![Dashboard](assets/screenshots/dashboard.png)
 
-![Airtime](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.12.25.png>)
+![Airtime](assets/screenshots/airtime.png)
 
-![Profile](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.12.33.png>)
-
-
+![Profile](assets/screenshots/profile.png)
 
 ---
 
@@ -164,4 +171,4 @@ MIT – feel free to fork and build your own features!
 
 ## 👤 Author
 
--   [Chidiebube Iroezindu](mailto:your.email@example.com)
+-   [Chidiebube Iroezindu](mailto:your.chidiebubeiroezindu@gmail.com)

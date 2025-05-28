@@ -1,6 +1,6 @@
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/features/auth/domain/entities/login_entity.dart';
-import 'package:d_crypto_lite/app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/features/auth/domain/entities/login_entity.dart';
+import 'package:dantown_clone/app/features/auth/domain/usecases/login_usecase.dart';
 import 'package:default_ui_components/default_ui_components.dart';
 import 'package:flutter/material.dart';
 

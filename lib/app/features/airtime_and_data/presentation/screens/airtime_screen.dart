@@ -1,7 +1,7 @@
-import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/features/airtime_and_data/data/models/network_provider.dart';
-import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
+import 'package:dantown_clone/app/core/gen/assets.gen.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/features/airtime_and_data/data/models/network_provider.dart';
+import 'package:dantown_clone/app/core/widgets/advance_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 

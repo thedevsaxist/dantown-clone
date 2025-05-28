@@ -1,4 +1,4 @@
-package com.thedevwriter.d_crypto_lite
+package com.thedevwriter.dantown_clone
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="d_crypto_lite"
+        android:label="Dantown Clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,6 +1,6 @@
-import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/core/widgets/wallet_display.dart';
+import 'package:dantown_clone/app/core/gen/assets.gen.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/core/widgets/wallet_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

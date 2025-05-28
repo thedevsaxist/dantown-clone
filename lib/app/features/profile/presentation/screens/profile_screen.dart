@@ -1,8 +1,8 @@
-import 'package:d_crypto_lite/app/core/constants.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/features/profile/data/models/profile_setting.dart';
-import 'package:d_crypto_lite/app/core/widgets/level_up_button.dart';
-import 'package:d_crypto_lite/app/core/widgets/profile_avatar.dart';
+import 'package:dantown_clone/app/core/constants.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/features/profile/data/models/profile_setting.dart';
+import 'package:dantown_clone/app/core/widgets/level_up_button.dart';
+import 'package:dantown_clone/app/core/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:uicons/uicons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import

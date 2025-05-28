@@ -1,7 +1,7 @@
-import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/features/auth/presentation/screens/login_screen.dart';
-import 'package:d_crypto_lite/app/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:dantown_clone/app/core/gen/assets.gen.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/features/auth/presentation/screens/login_screen.dart';
+import 'package:dantown_clone/app/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthInterface extends StatefulWidget {

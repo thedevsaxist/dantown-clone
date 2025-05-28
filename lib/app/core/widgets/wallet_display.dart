@@ -1,5 +1,5 @@
-import 'package:d_crypto_lite/app/core/constants.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
+import 'package:dantown_clone/app/core/constants.dart';
+import 'package:dantown_clone/app/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 

@@ -1,7 +1,7 @@
-import 'package:d_crypto_lite/app/features/home/domain/entities/transaction_entity.dart';
-import 'package:d_crypto_lite/app/features/home/domain/usecases/get_transaction_history_usecase.dart';
-import 'package:d_crypto_lite/app/features/home/domain/usecases/get_user_usecase.dart';
-import 'package:d_crypto_lite/app/features/home/domain/usecases/get_wallet_balance_usecase.dart';
+import 'package:dantown_clone/app/features/home/domain/entities/transaction_entity.dart';
+import 'package:dantown_clone/app/features/home/domain/usecases/get_transaction_history_usecase.dart';
+import 'package:dantown_clone/app/features/home/domain/usecases/get_user_usecase.dart';
+import 'package:dantown_clone/app/features/home/domain/usecases/get_wallet_balance_usecase.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class IDashboardViewModel extends ChangeNotifier {

@@ -1,13 +1,13 @@
-import 'package:d_crypto_lite/app/core/routes/routers.dart';
-import 'package:d_crypto_lite/app/core/theme.dart';
-import 'package:d_crypto_lite/app/features/auth/data/services/auth_services.dart';
+import 'package:dantown_clone/app/core/routes/routers.dart';
+import 'package:dantown_clone/app/core/theme.dart';
+import 'package:dantown_clone/app/features/auth/data/services/auth_services.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-class DCryptoLite extends StatelessWidget {
-  const DCryptoLite({super.key});
+class DantownClone extends StatelessWidget {
+  const DantownClone({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class DCryptoLite extends StatelessWidget {
         return MaterialApp.router(
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
-          title: 'D-Crypto Lite',
+          title: 'Dantown Clone',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightMode,
           themeMode: ThemeMode.light,

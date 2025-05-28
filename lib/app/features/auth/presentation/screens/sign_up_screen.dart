@@ -1,8 +1,9 @@
-import 'package:d_crypto_lite/app/core/constants.dart';
-import 'package:d_crypto_lite/app/features/auth/presentation/state/sign_up_screen_view_model.dart';
-import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
-import 'package:d_crypto_lite/app/core/widgets/dropdown_input.dart';
-import 'package:d_crypto_lite/app/core/widgets/text_input.dart';
+import 'package:dantown_clone/app/core/constants.dart';
+import 'package:dantown_clone/app/features/auth/presentation/state/sign_up_screen_view_model.dart';
+import 'package:dantown_clone/app/core/widgets/advance_button.dart';
+import 'package:dantown_clone/app/core/widgets/dropdown_input.dart';
+import 'package:dantown_clone/app/core/widgets/text_input.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -95,7 +96,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           padding: padding,
           onChanged: (value) {
             // Handle the selected value
-            print("Selected referral source: $value");
+            if (kDebugMode) {
+              print("Selected referral source: $value");
+            }
           },
         ),
 

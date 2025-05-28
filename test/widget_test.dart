@@ -1,12 +1,10 @@
-
-import 'package:d_crypto_lite/d_crypto_lite.dart';
+import 'package:dantown_clone/dantown_clone.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(const DCryptoLite());
+    await tester.pumpWidget(const DantownClone());
 
     expect(find.text('0'), findsOneWidget);
     expect(find.text('1'), findsNothing);
