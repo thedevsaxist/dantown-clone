@@ -22,8 +22,8 @@ A modern Flutter clone of the popular Dantown app, built to showcase my skills i
 
 ### Prerequisites
 
--   Flutter SDK (3.x recommended)
--   Dart SDK (3.x recommended)
+-   Flutter SDK (3.32 recommended)
+-   Dart SDK (3.8 recommended)
 -   Your preferred IDE (VS Code, Android Studio, etc.)
 
 ### Installation
@@ -54,16 +54,29 @@ A modern Flutter clone of the popular Dantown app, built to showcase my skills i
 lib/
 ├── app/
 │   ├── core/
-│   │   ├── gen/                # Generated assets (images, etc.)
-│   │   ├── theme.dart          # App theme and colors
-│   │   └── widgets/            # Shared widgets (e.g., wallet_display.dart)
+│   │   ├── constants.dart            # App-wide constants
+│   │   ├── gen/                      # Generated assets (images, etc.)
+│   │   ├── routes/                   # App routing and navigation
+│   │   ├── service_locators.dart     # Dependency injection setup
+│   │   ├── theme.dart                # App theme and colors
+│   │   ├── utils/                    # Helper functions and utilities
+│   │   └── widgets/                  # Shared widgets (e.g., wallet_display.dart, coins_tile.dart)
 │   └── features/
-│       └── trade/
-│           └── presentation/
-│               └── screens/
-│                   └── buy_sell_screen.dart
-├── main.dart                   # App entry point
-├── d_crypto_lite.dart 			# Main app widget
+│       ├── trade/                        # Example feature: Trade (Buy/Sell crypto)
+│       │   ├── data/                     # Data sources, models, repositories
+│       │   │   ├── models/               # Data models (e.g., Trade, Coin)
+│       │   │   ├── datasources/          # Remote/local data providers
+│       │   │   └── repositories/         # Repository implementations
+│       │   ├── domain/                   # Business logic, entities, use cases
+│       │   │   ├── entities/             # Core business entities
+│       │   │   ├── repositories/         # Repository interfaces (abstract)
+│       │   │   └── usecases/             # Application-specific use cases
+│       │   └── presentation/             # UI layer
+│       │       ├── state/                # State management (providers, notifiers)
+│       │       └── screens/              # Feature screens (e.g., buy_sell_screen.dart)
+│       └── ...other features             # (e.g., auth, home, profile, airtime_and_data)
+├── d_crypto_lite.dart                    # Main app widget
+├── main.dart                             # App entry point
 ```
 
 ---
@@ -76,7 +89,8 @@ assets/
 │   ├── exchange.png
 │   ├── virtual_card.png
 │   └── ...other icons
-└── fonts/
+└── logos/
+    ├── dantown_logo.png
     └── ...font files
 ```
 
@@ -117,7 +131,17 @@ flutter build ios
 
 ## 📸 Screenshots
 
-> Add some screen grabs of your UI here
+![Login Screenshot](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.10.36.png>)
+
+![Signup Screenshot](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.10.53.png>)
+
+![Dashboard](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.11.24.png>)
+
+![Airtime](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.12.25.png>)
+
+![Profile](<Simulator Screenshot - iPhone 15 Pro - 2025-05-28 at 11.12.33.png>)
+
+
 
 ---
 
