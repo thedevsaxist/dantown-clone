@@ -5,6 +5,7 @@ import 'package:d_crypto_lite/app/core/widgets/level_up_button.dart';
 import 'package:d_crypto_lite/app/core/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:uicons/uicons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -44,33 +45,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               Flexible(fit: FlexFit.loose, flex: 1, child: LevelUpButton()),
 
-              SizedBox(height: Constants.verticalSpacing),
+              SizedBox(height: Constants.verticalSpacing.h),
 
               Flexible(
                 fit: FlexFit.loose,
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: Constants.padding),
+                  padding: EdgeInsets.symmetric(horizontal: Constants.padding.w),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(Constants.borderRadius),
+                    borderRadius: BorderRadius.circular(Constants.borderRadius.r),
                     child: Stack(
                       alignment: Alignment.bottomCenter,
                       clipBehavior: Clip.none,
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(Constants.borderRadius),
+                            borderRadius: BorderRadius.circular(Constants.borderRadius.r),
                             color: AppColors.primaryColor,
                           ),
-                          // child: SizedBox(height: 10, width: 10),
-                          child: Placeholder(fallbackHeight: 180, color: AppColors.primaryColor),
+                          child: Placeholder(fallbackHeight: 180.h, color: AppColors.primaryColor),
                         ),
 
                         Positioned(
-                          bottom: -210,
+                          bottom: -210.h,
                           child: Container(
-                            width: 370,
-                            height: 370,
+                            width: 370.w,
+                            height: 370.w,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppColors.darkBlue,
@@ -78,13 +78,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
 
-                        Positioned(top: 30, child: ProfileAvatar()),
+                        Positioned(top: 30.h, child: ProfileAvatar()),
 
                         Text(
                           "Chidiebube Iroezindu",
                           style: t.titleLarge?.copyWith(
                             color: AppColors.backgroundColor,
                             fontWeight: FontWeight.bold,
+                            fontSize: t.titleLarge?.fontSize?.sp,
                           ),
                         ),
                       ],
@@ -93,16 +94,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-              SizedBox(height: Constants.verticalSpacing),
+              SizedBox(height: Constants.verticalSpacing.h),
 
               Flexible(
                 fit: FlexFit.loose,
                 flex: 4,
                 child: Container(
-                  padding: const EdgeInsets.all(Constants.padding),
+                  padding: EdgeInsets.all(Constants.padding.w),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(Constants.borderRadius),
+                    borderRadius: BorderRadius.circular(Constants.borderRadius.r),
                     color: AppColors.backgroundColor,
                   ),
 
@@ -122,7 +123,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             // Add spacing except after the last item
                             if (idx != _settings.length - 1)
-                              SizedBox(height: Constants.horizontalSpacing),
+                              SizedBox(height: Constants.horizontalSpacing.h),
                           ],
                         );
                       }).toList(),
@@ -155,10 +156,10 @@ class SettingsOptions extends StatelessWidget {
     final t = Theme.of(context).textTheme;
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(Constants.padding),
+      padding: EdgeInsets.all(Constants.padding.w),
       decoration: BoxDecoration(
         color: AppColors.lightPurple,
-        borderRadius: BorderRadius.circular(Constants.borderRadius),
+        borderRadius: BorderRadius.circular(Constants.borderRadius.r),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -167,49 +168,21 @@ class SettingsOptions extends StatelessWidget {
           CircleAvatar(
             backgroundColor: AppColors.backgroundColor,
             child: Icon(icon, color: AppColors.purple),
+            radius: 24.r,
           ),
 
-          SizedBox(height: Constants.verticalSpacing),
-          Text(title, style: t.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 18)),
-          Text(subtitle, style: t.labelMedium?.copyWith(color: AppColors.textPurple, height: 2)),
+          SizedBox(height: Constants.verticalSpacing.h),
+          Text(title, style: t.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 18.sp)),
+          Text(
+            subtitle,
+            style: t.labelMedium?.copyWith(
+              color: AppColors.textPurple,
+              height: 2,
+              fontSize: t.labelMedium?.fontSize?.sp,
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-        // ListTile(
-        //   tileColor: AppColors.yellow,
-        //   trailing: Container(
-        //     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        //     decoration: BoxDecoration(
-        //       borderRadius: BorderRadius.circular(Constants.borderRadius),
-        //       color: AppColors.backgroundColor,
-        //     ),
-        //     child: Text(
-        //       "Upgrade",
-        //       style: t.bodyMedium?.copyWith(
-        //         color: AppColors.primaryColor,
-        //         fontWeight: FontWeight.bold,
-        //       ),
-        //     ),
-        //   ),
-        //   title: Text("Upgrade to Level 1"),
-        //   titleTextStyle: t.bodyLarge?.copyWith(
-        //     color: AppColors.primaryColor,
-        //     fontWeight: FontWeight.bold,
-        //   ),
-        //   subtitle: Text("Enjoy more benefits when you verify your account"),
-        //   subtitleTextStyle: t.labelSmall?.copyWith(
-        //     color: AppColors.textYellow,
-        //     letterSpacing: 0.1,
-        //     fontSize: 10.0,
-        //   ),
-        //   leading: CircleAvatar(
-        //     backgroundColor: AppColors.backgroundColor,
-        //     child: Icon(UIcons.solidRounded.crown, size: 20),
-        //   ),
-        //   shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.circular(Constants.borderRadius),
-        //   ),
-        // ),

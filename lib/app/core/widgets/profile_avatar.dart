@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Displays a circular user profile avatar.
 ///
@@ -10,8 +11,8 @@ class ProfileAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      width: 80,
+      height: 80.h,
+      width: 80.w,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(

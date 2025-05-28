@@ -2,6 +2,7 @@ import 'package:d_crypto_lite/app/core/gen/assets.gen.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/core/widgets/wallet_display.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuySellScreen extends StatefulWidget {
   const BuySellScreen({super.key});
@@ -12,7 +13,7 @@ class BuySellScreen extends StatefulWidget {
 
 class _BuySellScreenState extends State<BuySellScreen> {
   int _selectedTab = 0;
-  int _previousTab = 0; // Add this line
+  int _previousTab = 0; // don't remove this line
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +25,38 @@ class _BuySellScreenState extends State<BuySellScreen> {
         title: Text("Wallets"),
         centerTitle: false,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.vertical(bottom: Radius.circular(20)),
+          borderRadius: BorderRadiusGeometry.vertical(
+            bottom: Radius.circular(20.r),
+          ), // Responsive border radius
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(250),
+          preferredSize: Size.fromHeight(250.h), // Responsive height
           child: Column(
             children: [
               WalletDisplay(
                 trailing: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 2.0),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 4.w,
+                    vertical: 2.h,
+                  ), // Responsive padding
                   decoration: BoxDecoration(
                     border: Border.all(color: AppColors.primaryColor),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8.r), // Responsive border radius
                   ),
-                  child: Row(children: [Text("NGN"), Icon(Icons.keyboard_arrow_down_rounded)]),
+                  child: Row(
+                    children: [
+                      Text("NGN", style: t.bodyMedium),
+                      Icon(Icons.keyboard_arrow_down_rounded, size: 18.sp),
+                    ],
+                  ),
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                  vertical: 10.h,
+                ), // Responsive padding
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -65,7 +79,11 @@ class _BuySellScreenState extends State<BuySellScreen> {
               ),
 
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 30.0),
+                padding: EdgeInsets.only(
+                  left: 20.w,
+                  right: 20.w,
+                  bottom: 30.h,
+                ), // Responsive padding
                 child: Row(
                   children: [
                     _Balance(
@@ -75,7 +93,7 @@ class _BuySellScreenState extends State<BuySellScreen> {
                       showBottom: true,
                     ),
 
-                    SizedBox(width: 10),
+                    SizedBox(width: 10.w), // Responsive spacing
 
                     _Balance(
                       label: "Virtual Card",
@@ -91,12 +109,14 @@ class _BuySellScreenState extends State<BuySellScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15.0),
+        padding: EdgeInsets.only(top: 15.h), // Responsive padding
         child: Container(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(20.w), // Responsive padding
           decoration: BoxDecoration(
             color: AppColors.backgroundColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20.r),
+            ), // Responsive border radius
           ),
           child: Column(
             children: [
@@ -125,17 +145,17 @@ class _BuySellScreenState extends State<BuySellScreen> {
                             child: Text("Wallet"),
                           ),
                           Container(
-                            height: 3,
-                            width: 50,
+                            height: 3.h, // Responsive height
+                            width: 50.w, // Responsive width
                             decoration: BoxDecoration(
                               color:
                                   _selectedTab == 0 ? AppColors.primaryColor : Colors.transparent,
-                              borderRadius: BorderRadius.circular(2),
+                              borderRadius: BorderRadius.circular(2.r), // Responsive border radius
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: 12.w), // Responsive spacing
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -156,12 +176,12 @@ class _BuySellScreenState extends State<BuySellScreen> {
                             child: Text("Transaction History"),
                           ),
                           Container(
-                            height: 3,
-                            width: 130,
+                            height: 3.h, // Responsive height
+                            width: 130.w, // Responsive width
                             decoration: BoxDecoration(
                               color:
                                   _selectedTab == 1 ? AppColors.primaryColor : Colors.transparent,
-                              borderRadius: BorderRadius.circular(2),
+                              borderRadius: BorderRadius.circular(2.r), // Responsive border radius
                             ),
                           ),
                         ],
@@ -169,14 +189,18 @@ class _BuySellScreenState extends State<BuySellScreen> {
                     ],
                   ),
                   IconButton(
-                    icon: Icon(Icons.search, color: AppColors.primaryColor),
+                    icon: Icon(
+                      Icons.search,
+                      color: AppColors.primaryColor,
+                      size: 22.sp,
+                    ), // Responsive icon size
                     onPressed: () {
                       // TODO: Implement search action
                     },
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 16.h), // Responsive spacing
               _selectedTab == 0
                   ? Center(child: Text("Wallet Content"))
                   : Center(child: Text("Transaction History Content")),
@@ -207,9 +231,9 @@ class _Balance extends StatelessWidget {
 
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.w), // Responsive padding
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r), // Responsive border radius
           color: AppColors.lightBlue,
         ),
         child: Column(
@@ -220,21 +244,36 @@ class _Balance extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 3.0),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3.0.w,
+                    ), // Responsive border width
                     shape: BoxShape.circle,
                   ),
                   child: icon,
                 ),
+                SizedBox(width: 6.w), // Responsive spacing
                 Text(label, style: t.bodyMedium),
               ],
             ),
+            SizedBox(height: 6.h), // Responsive spacing
             Text("NGN $balance", style: t.titleLarge),
 
             Row(
               children: [
-                Text("0.0%", style: t.labelSmall?.copyWith(color: AppColors.green, fontSize: 10)),
-                Icon(Icons.arrow_drop_up_rounded, color: AppColors.green),
-                Text("Growth this month.", style: t.labelSmall?.copyWith(fontSize: 10)),
+                Text(
+                  "0.0%",
+                  style: t.labelSmall?.copyWith(color: AppColors.green, fontSize: 10.sp),
+                ), // Responsive font size
+                Icon(
+                  Icons.arrow_drop_up_rounded,
+                  color: AppColors.green,
+                  size: 16.sp,
+                ), // Responsive icon size
+                Text(
+                  "Growth this month.",
+                  style: t.labelSmall?.copyWith(fontSize: 10.sp),
+                ), // Responsive font size
               ],
             ),
           ],

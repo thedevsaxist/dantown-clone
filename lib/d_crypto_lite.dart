@@ -3,6 +3,7 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/features/auth/data/services/auth_services.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class DCryptoLite extends StatelessWidget {
@@ -11,14 +12,20 @@ class DCryptoLite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final auth = context.watch<IAuthServices>();
-    return MaterialApp.router(
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
-      title: 'D-Crypto Lite',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightMode,
-      themeMode: ThemeMode.light,
-      routerConfig: Routers.config(auth),
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          title: 'D-Crypto Lite',
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightMode,
+          themeMode: ThemeMode.light,
+          routerConfig: Routers.config(auth),
+        );
+      },
     );
   }
 }

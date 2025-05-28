@@ -23,7 +23,30 @@ void main() async {
         ChangeNotifierProvider(create: (_) => sl<IDashboardViewModel>()),
         ChangeNotifierProvider(create: (_) => sl<IAuthServices>()),
       ],
-      child: DevicePreview(builder: (_) => const DCryptoLite()),
+      child: DevicePreview(
+        backgroundColor: Colors.white,
+        defaultDevice: Devices.ios.iPhone13,
+        isToolbarVisible: true,
+        availableLocales: const [Locale('en', 'US')],
+        tools: const [
+          // ...DevicePreview.defaultTools,
+          DeviceSection(
+            model: false,
+            orientation: false,
+            frameVisibility: false,
+            virtualKeyboard: true,
+          ),
+        ],
+        devices: [
+          Devices.ios.iPhoneSE,
+          Devices.ios.iPhone13Mini,
+          Devices.ios.iPhone13,
+          Devices.android.samsungGalaxyA50,
+          Devices.android.bigPhone,
+          Devices.android.mediumPhone,
+          Devices.android.smallPhone,
+        ],
+        builder: (_) => const DCryptoLite()),
     ),
   );
 }

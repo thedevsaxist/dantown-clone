@@ -1,6 +1,7 @@
 import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// A styled text input field with label and optional password visibility toggle.
 ///
@@ -42,7 +43,7 @@ class _TextInputState extends State<TextInput> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: widget.padding),
+          padding: EdgeInsets.symmetric(vertical: widget.padding.h),
           child: Text(
             widget.label,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(

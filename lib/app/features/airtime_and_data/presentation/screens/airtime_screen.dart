@@ -3,6 +3,7 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/features/airtime_and_data/data/models/network_provider.dart';
 import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 
 final List<NetworkProvider> _networkProviders = [
   NetworkProvider(name: "Airtel Airtime VTU", imagePath: Assets.logos.networkProviders.airtel.path),
@@ -73,7 +74,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -81,26 +82,26 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
                 "Select Network Provider",
                 style: t.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Container(
                 decoration: BoxDecoration(
                   color: AppColors.backgroundColor.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(8.r),
                 ),
                 child: Row(
                   children: [
                     Container(
-                      width: 100,
-                      height: 80,
+                      width: 100.w,
+                      height: 80.h,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(left: Radius.circular(8)),
-                        border: Border.all(color: AppColors.primaryColor, width: 1),
+                        borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
+                        border: Border.all(color: AppColors.primaryColor, width: 1.w),
                         color: Colors.grey[200],
                       ),
                       child:
                           _selectedProvider != null
                               ? ClipRRect(
-                                borderRadius: BorderRadius.horizontal(left: Radius.circular(8)),
+                                borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
                                 child: Image.asset(
                                   _selectedProvider!.imagePath,
                                   fit: BoxFit.fitWidth,
@@ -108,7 +109,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
                               )
                               : const SizedBox.shrink(),
                     ),
-                    const SizedBox(width: 12),
+                    SizedBox(width: 12.w),
                     Expanded(
                       child: DropdownButtonHideUnderline(
                         child: DropdownButton<String>(
@@ -143,7 +144,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
                   ],
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
@@ -156,7 +157,7 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               _InputField(hintText: "09000123733", maxLength: 11),
               Row(
                 children: [
@@ -182,14 +183,11 @@ class _AirtimeScreenState extends State<AirtimeScreen> with SingleTickerProvider
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Text("Amount", style: t.bodyMedium?.copyWith(fontWeight: FontWeight.w500)),
-              const SizedBox(height: 8),
-
+              SizedBox(height: 8.h),
               _InputField(hintText: "Enter Amount", maxLength: 5),
-
-              const SizedBox(height: 24),
-
+              SizedBox(height: 24.h),
               AdvanceButton(label: "Continue to pay", onPressed: () {}),
             ],
           ),
@@ -227,11 +225,11 @@ class _InputFieldState extends State<_InputField> {
         hintText: widget.hintText,
         hintStyle: t.bodyMedium?.copyWith(color: AppColors.secondaryColor),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: AppColors.secondaryColor),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: AppColors.secondaryColor),
         ),
         counterText: "${_controller.text.length}/${widget.maxLength}",

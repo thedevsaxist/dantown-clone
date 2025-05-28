@@ -1,6 +1,7 @@
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/core/widgets/coins_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 
 /// A reusable bottom sheet widget for displaying content in a modal overlay.
 ///
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 ///
 /// Includes a drag handle and a customizable content area.
 class CustomBottomSheet extends StatelessWidget {
-
   const CustomBottomSheet({super.key});
 
   @override
@@ -17,22 +17,24 @@ class CustomBottomSheet extends StatelessWidget {
 
     return Material(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h), // Responsive padding
         decoration: BoxDecoration(
           color: AppColors.backgroundColor,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20.r),
+          ), // Responsive border radius
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             // Drag handle
             Container(
-              width: 100,
-              height: 5,
-              margin: const EdgeInsets.only(bottom: 10),
+              width: 100.w, // Responsive width
+              height: 5.h, // Responsive height
+              margin: EdgeInsets.only(bottom: 10.h), // Responsive margin
               decoration: BoxDecoration(
                 color: AppColors.secondaryColor,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(12.r), // Responsive border radius
               ),
             ),
 
@@ -40,13 +42,18 @@ class CustomBottomSheet extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Coin/Price", style: t.labelSmall?.copyWith(color: AppColors.darkGrey)),
-                Text("24h Change", style: t.labelSmall?.copyWith(color: AppColors.darkGrey)),
+                Text(
+                  "Coin/Price",
+                  style: t.labelSmall?.copyWith(color: AppColors.darkGrey, fontSize: 12.sp),
+                ), // Responsive font size
+                Text(
+                  "24h Change",
+                  style: t.labelSmall?.copyWith(color: AppColors.darkGrey, fontSize: 12.sp),
+                ), // Responsive font size
               ],
             ),
 
-            const SizedBox(height: 10),
-
+            SizedBox(height: 10.h), // Responsive spacing
             // Dynamic list of coins
             Expanded(
               child: ListView.builder(

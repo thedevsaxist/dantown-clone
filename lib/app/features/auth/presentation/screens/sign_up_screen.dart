@@ -1,9 +1,11 @@
+import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/state/sign_up_screen_view_model.dart';
 import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
 import 'package:d_crypto_lite/app/core/widgets/dropdown_input.dart';
 import 'package:d_crypto_lite/app/core/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -13,7 +15,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final double padding = 15;
+  final double padding = Constants.verticalSpacing;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your username",
           keyboardType: TextInputType.name,
           nextFocusNode: vm.firstNameFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         // first name
@@ -39,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your first name",
           keyboardType: TextInputType.name,
           nextFocusNode: vm.emailFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         // email
@@ -50,7 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your email address",
           keyboardType: TextInputType.emailAddress,
           nextFocusNode: vm.phoneNumberFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         // phone number
@@ -61,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your phone number",
           keyboardType: TextInputType.number,
           nextFocusNode: vm.passwordFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         // password
@@ -72,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your password",
           keyboardType: TextInputType.visiblePassword,
           nextFocusNode: vm.passwordFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         // referral code
@@ -83,21 +85,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
           hintText: "Enter your referral code(Optional)",
           keyboardType: TextInputType.name,
           nextFocusNode: vm.referralCodeFocusNode,
-          padding: padding, // Pass the padding variable
+          padding: padding,
         ),
 
         DropdownInput(
           label: "How did you hear about us?",
           options: ["Facebook", "Twitter", "Instagram", "Billboard", "Other"],
           selectedValue: null,
-          padding: padding, // Pass the padding variable
+          padding: padding,
           onChanged: (value) {
             // Handle the selected value
             print("Selected referral source: $value");
           },
         ),
 
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
 
         AdvanceButton(label: "Sign up", onPressed: () => vm.signUp(context)),
       ],

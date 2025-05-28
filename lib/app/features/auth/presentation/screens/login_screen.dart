@@ -1,8 +1,10 @@
+import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/features/auth/presentation/state/login_screen_view_model.dart';
 import 'package:d_crypto_lite/app/core/widgets/advance_button.dart';
 import 'package:d_crypto_lite/app/core/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,14 +14,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final double padding = 20;
   @override
   Widget build(BuildContext context) {
     final vm = context.read<ILoginScreenViewModel>();
     return Column(
       children: [
         TextInput(
-          padding: 20,
+          padding: Constants.padding,
           textController: vm.emailController,
           focusNode: vm.emailFocusNode,
           label: "Email",
@@ -29,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
 
         TextInput(
-          padding: 20,
+          padding: Constants.padding,
           textController: vm.passwordController,
           focusNode: vm.passwordFocusNode,
           label: "Password",
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
-        const SizedBox(height: 15),
+        SizedBox(height: 15.h),
 
         AdvanceButton(label: "Login", onPressed: () => vm.login(context)),
       ],

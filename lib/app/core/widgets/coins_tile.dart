@@ -1,5 +1,6 @@
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // Add this import
 import 'package:google_fonts/google_fonts.dart';
 
 /// Displays a tile representing a cryptocurrency, including its name, price,
@@ -13,39 +14,52 @@ class CoinsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
     return ListTile(
-      minTileHeight: 76.0,
-      leading: CircleAvatar(foregroundColor: AppColors.darkGrey),
+      minTileHeight: 76.h, // Responsive min height
+      leading: CircleAvatar(
+        radius: 22.r, // Responsive avatar radius
+        foregroundColor: AppColors.darkGrey,
+      ),
       title: Text("DOGE"),
       titleTextStyle: t.bodyLarge?.copyWith(
         color: AppColors.primaryColor,
         fontWeight: FontWeight.w600,
-        fontSize: 18,
+        fontSize: 18.sp, // Responsive font size
       ),
       subtitle: Text("NGN 345.76"),
       subtitleTextStyle: GoogleFonts.poppins(
         color: AppColors.darkGrey,
         fontWeight: FontWeight.w600,
-        fontSize: 12,
+        fontSize: 12.sp, // Responsive font size
       ),
       isThreeLine: true,
-      contentPadding: const EdgeInsets.only(left: 0),
+      contentPadding: EdgeInsets.only(left: 0.w), // Responsive padding
       trailing: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h), // Responsive padding
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r), // Responsive border radius
               color: AppColors.green,
             ),
             child: Text(
               "+11.99%",
-              style: t.labelLarge?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+              style: t.labelLarge?.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 14.sp, // Responsive font size
+              ),
             ),
           ),
 
-          const SizedBox(height: 6),
+          SizedBox(height: 6.h), // Responsive spacing
 
-          Text("+NGN 38.41", style: t.labelMedium?.copyWith(color: AppColors.textGreen)),
+          Text(
+            "+NGN 38.41",
+            style: t.labelMedium?.copyWith(
+              color: AppColors.textGreen,
+              fontSize: 12.sp, // Responsive font size
+            ),
+          ),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// A customizable button widget for advancing or submitting actions in the app.
 ///
@@ -23,8 +24,8 @@ class _AdvanceButtonState extends State<AdvanceButton> {
       onPressed: widget.onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 3,
-        minimumSize: Size(double.infinity, 10),
-        padding: const EdgeInsets.symmetric(vertical: 15),
+        minimumSize: Size(double.infinity, 10.h),
+        padding: EdgeInsets.symmetric(vertical: 15.h),
         backgroundColor: AppColors.primaryColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Constants.borderRadius)),
       ),

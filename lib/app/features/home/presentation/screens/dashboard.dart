@@ -9,6 +9,7 @@ import 'package:d_crypto_lite/app/core/widgets/quick_action_item.dart';
 import 'package:d_crypto_lite/app/core/widgets/wallet_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class Dashboard extends StatefulWidget {
@@ -39,13 +40,13 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: AppColors.secondaryBackgroundColor,
       appBar: AppBar(
-        titleSpacing: 10,
+        titleSpacing: 10.w,
         scrolledUnderElevation: 0,
-        actionsPadding: const EdgeInsets.only(right: Constants.horizontalPadding),
+        actionsPadding: EdgeInsets.only(right: Constants.horizontalPadding),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(Constants.borderRadius)),
         ),
-        leading: Padding(padding: const EdgeInsets.only(left: 20), child: ProfileAvatar()),
+        leading: Padding(padding: EdgeInsets.only(left: 20.r), child: ProfileAvatar()),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,24 +58,24 @@ class _DashboardState extends State<Dashboard> {
         actions: [
           Icon(CupertinoIcons.chat_bubble_2_fill),
 
-          const SizedBox(width: 15),
+          SizedBox(width: 15.w),
 
           Badge(
-            smallSize: 10.0,
+            smallSize: 10.0.r,
             backgroundColor: AppColors.secondaryColor,
             child: Icon(Icons.notifications),
           ),
         ],
 
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(120),
+          preferredSize: Size.fromHeight(120.h),
           child: WalletDisplay(
             trailing: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15.0),
+                padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 15.0.w),
                 backgroundColor: AppColors.primaryColor,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
               ),
               child: Text(
                 "Deposit",
@@ -90,12 +91,12 @@ class _DashboardState extends State<Dashboard> {
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: EdgeInsets.only(top: 20.0.h),
               child: Column(
                 children: [
                   Container(
                     width: screenWidth,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
                     decoration: BoxDecoration(
                       color: AppColors.backgroundColor,
                       borderRadius: BorderRadius.circular(Constants.borderRadius),
@@ -118,7 +119,7 @@ class _DashboardState extends State<Dashboard> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const SizedBox(height: 15),
+                        SizedBox(height: 15.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -137,28 +138,28 @@ class _DashboardState extends State<Dashboard> {
 
                   // Ad section
                   Padding(
-                    padding: const EdgeInsets.all(Constants.borderRadius),
+                    padding: EdgeInsets.all(Constants.borderRadius),
                     child: Container(
                       width: screenWidth,
-                      height: 90,
+                      height: 90.h,
                       decoration: BoxDecoration(
                         color: AppColors.primaryColor,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(20.r),
                       ),
                     ),
                   ),
 
                   Container(
                     width: screenWidth,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
                     decoration: BoxDecoration(
                       color: AppColors.backgroundColor,
                       borderRadius: BorderRadius.circular(Constants.borderRadius),
                       boxShadow: [
                         BoxShadow(
                           blurStyle: BlurStyle.outer,
-                          blurRadius: 20,
-                          spreadRadius: 5,
+                          blurRadius: 20.r,
+                          spreadRadius: 5.r,
                           color: Color.fromARGB(255, 215, 218, 226),
                         ),
                       ],
@@ -178,9 +179,9 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
                         SizedBox(
-                          height: 200, // Set a fixed height or use `Expanded` if needed
+                          height: 200.h,
                           child: ListView.builder(
                             itemCount: 5,
                             itemBuilder: (context, index) => CoinsTile(),
@@ -205,7 +206,7 @@ class _DashboardState extends State<Dashboard> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              const SizedBox(width: 5),
+                              SizedBox(width: 5.w),
                               Icon(CupertinoIcons.chevron_down),
                             ],
                           ),

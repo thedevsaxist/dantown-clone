@@ -1,6 +1,7 @@
 import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// A styled dropdown input widget for selecting from a list of string options.
 ///
@@ -42,7 +43,7 @@ class _DropdownInputState extends State<DropdownInput> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: widget.padding),
+          padding: EdgeInsets.symmetric(vertical: widget.padding.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
