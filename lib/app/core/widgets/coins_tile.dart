@@ -2,6 +2,10 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Displays a tile representing a cryptocurrency, including its name, price,
+/// and 24-hour change.
+///
+/// Used in lists to show multiple coins with their respective data.
 class CoinsTile extends StatelessWidget {
   const CoinsTile({super.key});
 

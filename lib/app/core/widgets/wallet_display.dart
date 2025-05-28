@@ -2,6 +2,11 @@ import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
+/// Displays the user's wallet balance and related information.
+///
+/// Includes a visibility toggle for sensitive data and a customizable trailing widget.
+///
+/// Used in dashboards or wallet overview screens.
 class WalletDisplay extends StatefulWidget {
   final Widget trailing;
   const WalletDisplay({super.key, required this.trailing});

@@ -1,16 +1,26 @@
-import 'package:d_crypto_lite/app/core/routes.dart';
-import 'package:d_crypto_lite/app/core/utils/auth_interface.dart';
-import 'package:d_crypto_lite/app/core/utils/bottom_nav_bar.dart';
-import 'package:d_crypto_lite/app/features/auth/data/services/auth_services.dart';
-import 'package:d_crypto_lite/app/features/airtime_and_data/presentation/screens/airtime_screen.dart';
-import 'package:d_crypto_lite/app/features/trade/presentation/screens/buy_sell_screen.dart';
-import 'package:d_crypto_lite/app/features/home/presentation/screens/dashboard.dart';
-import 'package:d_crypto_lite/app/features/auth/presentation/screens/login_screen.dart';
-import 'package:d_crypto_lite/app/features/profile/presentation/screens/profile_screen.dart';
-import 'package:d_crypto_lite/app/features/auth/presentation/screens/sign_up_screen.dart';
-import 'package:go_router/go_router.dart';
+import 'router_barrel.dart';
 
+/// Provides the application's routing configuration using [GoRouter].
+///
+/// The [Routers] class contains a static [config] method that returns a [GoRouter]
+/// instance configured with all the app's routes, authentication redirects, and
+/// navigation structure.
+///
+/// - Handles authentication-based redirects:
+///   - Unauthenticated users are redirected to the [Routes.authInterface].
+///   - Authenticated users attempting to access the auth interface are redirected to [Routes.dashboard].
+/// - Defines all main routes, including login, sign up, and the main dashboard.
+/// - Uses [StatefulShellRoute] with an indexed stack for bottom navigation,
+///   organizing the app into branches for dashboard, buy/sell, airtime, and profile screens.
+///
+/// Example usage:
+/// ```dart
+/// final router = Routers.config(authService);
+/// ```
 class Routers {
+  /// Returns a [GoRouter] configured with all routes and authentication logic.
+  ///
+  /// [auth] is an implementation of [IAuthServices] used to determine authentication state.
   static GoRouter config(IAuthServices auth) => GoRouter(
     initialLocation: Routes.authInterface,
     refreshListenable: auth,

@@ -1,6 +1,9 @@
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
+/// A widget representing a quick action shortcut with an icon and label.
+///
+/// Used in dashboards or menus to provide fast access to frequent actions.
 class QuickActionItem extends StatefulWidget {
   final String image;
   final String label;

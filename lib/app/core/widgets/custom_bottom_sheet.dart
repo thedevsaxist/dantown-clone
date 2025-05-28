@@ -2,6 +2,11 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:d_crypto_lite/app/core/widgets/coins_tile.dart';
 import 'package:flutter/material.dart';
 
+/// A reusable bottom sheet widget for displaying content in a modal overlay.
+///
+/// Typically used to show lists of coins, actions, or additional information.
+///
+/// Includes a drag handle and a customizable content area.
 class CustomBottomSheet extends StatelessWidget {
 
   const CustomBottomSheet({super.key});

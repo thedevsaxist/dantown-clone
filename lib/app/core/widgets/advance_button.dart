@@ -2,6 +2,11 @@ import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
+/// A customizable button widget for advancing or submitting actions in the app.
+///
+/// Typically used for primary actions such as form submission or navigation.
+///
+/// Customize appearance and behavior via constructor parameters.
 class AdvanceButton extends StatefulWidget {
   final void Function()? onPressed;
   final String label;

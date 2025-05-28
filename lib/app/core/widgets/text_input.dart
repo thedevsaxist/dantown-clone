@@ -2,6 +2,11 @@ import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
+/// A styled text input field with label and optional password visibility toggle.
+///
+/// Supports validation, keyboard type customization, and focus management.
+///
+/// Used for form fields throughout the app.
 class TextInput extends StatefulWidget {
   final TextEditingController textController;
   final FocusNode focusNode;

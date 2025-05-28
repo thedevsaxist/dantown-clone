@@ -2,6 +2,11 @@ import 'package:d_crypto_lite/app/core/constants.dart';
 import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 
+/// A styled dropdown input widget for selecting from a list of string options.
+///
+/// Includes a label, optional indicator, and customizable padding.
+///
+/// Notifies parent widgets of selection changes via [onChanged].
 class DropdownInput extends StatefulWidget {
   final String label;
   final List<String> options;

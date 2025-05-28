@@ -3,6 +3,11 @@ import 'package:d_crypto_lite/app/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:uicons/uicons.dart';
 
+/// A prominent button widget for prompting users to upgrade or verify their account level.
+///
+/// Displays an icon, title, and description, styled to attract attention.
+///
+/// Used to encourage users to access more features by upgrading.
 class LevelUpButton extends StatelessWidget {
   const LevelUpButton({super.key});
 
