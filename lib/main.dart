@@ -25,7 +25,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => sl<IAuthServices>()),
       ],
       child: DevicePreview(
-        enabled: !kReleaseMode && kIsWeb,
+        enabled: kDebugMode && kIsWeb,
         backgroundColor: Colors.white,
         defaultDevice: Devices.ios.iPhone13,
         isToolbarVisible: true,
