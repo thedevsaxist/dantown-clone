@@ -43,4 +43,4 @@ flutter:
     - assets/logos/
     - assets/logos/network providers/
     - assets/images/
-    - .env
+    # - .env
