@@ -110,7 +110,7 @@ assets/
 -   **State Management:** Provider
 -   **UI:** Material Design, custom widgets
 -   **Mock Data:** Local JSON
--   **Architecture:** Modular, feature-first
+-   **Architecture:** MVVM, feature-first
 
 ---
 
