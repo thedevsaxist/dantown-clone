@@ -5,6 +5,7 @@ import 'package:dantown_clone/app/features/home/presentation/state/dashboard_vie
 import 'package:dantown_clone/app/features/auth/presentation/state/login_screen_view_model.dart';
 import 'package:dantown_clone/app/features/auth/presentation/state/sign_up_screen_view_model.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
@@ -24,6 +25,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => sl<IAuthServices>()),
       ],
       child: DevicePreview(
+        enabled: !kReleaseMode && kIsWeb,
         backgroundColor: Colors.white,
         defaultDevice: Devices.ios.iPhone13,
         isToolbarVisible: true,
@@ -31,7 +33,7 @@ void main() async {
         tools: const [
           // ...DevicePreview.defaultTools,
           DeviceSection(
-            model: false,
+            model: true,
             orientation: false,
             frameVisibility: false,
             virtualKeyboard: true,
