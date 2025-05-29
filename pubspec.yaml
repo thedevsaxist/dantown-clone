@@ -1,5 +1,5 @@
 name: dantown_clone
-description: "A dantown app clone"
+description: "A modern Flutter clone of the popular Dantown app, built to showcase my skills in Flutter development, UI/UX, and app architecture."
 publish_to: 'none'
 
 version: 1.0.0+1
