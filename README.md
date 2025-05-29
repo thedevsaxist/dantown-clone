@@ -140,15 +140,11 @@ flutter build ios
 
 ## 📸 Screenshots
 
-![Login Screenshot](assets/screenshots/login.png)
-
-![Signup Screenshot](assets/screenshots/signup.png)
-
-![Dashboard](assets/screenshots/dashboard.png)
-
-![Airtime](assets/screenshots/airtime.png)
-
-![Profile](assets/screenshots/profile.png)
+<img src="assets/screenshots/login.png" alt="Login Screenshot" height="500"/>
+<img src="assets/screenshots/signup.png" alt="Signup Screenshot" height="500"/>
+<img src="assets/screenshots/dashboard.png" alt="Dashboard Screenshot" height="500"/>
+<img src="assets/screenshots/airtime.png" alt="Airtime Screenshot" height="500"/>
+<img src="assets/screenshots/profile.png" alt="Profile Screenshot" height="500"/>
 
 ---
 
