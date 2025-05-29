@@ -14,7 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   serviceLocator();
 
-  await dotenv.load(fileName: ".env");
+  if (!kIsWeb){
+    await dotenv.load(fileName: ".env");
+  }
 
   runApp(
     MultiProvider(
